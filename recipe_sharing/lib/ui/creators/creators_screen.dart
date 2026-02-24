@@ -51,22 +51,28 @@ class _CreatorsScreenState extends State<CreatorsScreen> {
                         state.currentUserEmail,
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      TextButton(
-                        onPressed: () async {
-                          await SharedPreferencesService.clearUserData();
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoginScreen(),
-                            ),
-                          );
-                        },
-                        child: Text("Log out"),
-                      ),
                     ],
                   ),
                 ),
                 const Divider(),
+                Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.logout),
+                      title: Text("Log out"),
+                      onTap: () async {
+                        await SharedPreferencesService.clearUserData();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    const Divider(height: 1),
+                  ],
+                ),
                 Column(
                   children: [
                     ListTile(
