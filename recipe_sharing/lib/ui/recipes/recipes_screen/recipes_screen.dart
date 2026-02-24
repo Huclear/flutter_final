@@ -13,6 +13,8 @@ import 'package:recipe_sharing/ui/recipes/recipes_screen/recipe_ordering_drop_do
 import 'package:recipe_sharing/ui/stadard/error_info_page.dart';
 import 'package:recipe_sharing/ui/stadard/page__selection_row.dart';
 
+import '../../../data/repositories/shared_prefs_storage.dart';
+import '../../auth/login_page.dart';
 import '../../filter/filters_tab.dart';
 class RecipesScreen extends StatefulWidget {
   final RecipesLoadedDataType loadedDataType;
@@ -94,6 +96,18 @@ class _RecipesScreenState extends State<RecipesScreen>
                           state.currentUserEmail,
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
+                        TextButton(
+                        onPressed: () async {
+                          await SharedPreferencesService.clearUserData();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                        },
+                        child: Text("Log out"),
+                      ),
                       ],
                     ),
                   ),

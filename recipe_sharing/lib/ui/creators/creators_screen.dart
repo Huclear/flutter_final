@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipe_sharing/data/repositories/shared_prefs_storage.dart';
 import 'package:recipe_sharing/domain/models/api_result.dart';
 import 'package:recipe_sharing/presentation/creators/creators_load_data_type.dart';
 import 'package:recipe_sharing/presentation/creators/creators_screen_cubit.dart';
 import 'package:recipe_sharing/presentation/creators/creators_screen_state.dart';
 import 'package:recipe_sharing/presentation/recipes/recipes_screen/recipes_loaded_data_type.dart';
+import 'package:recipe_sharing/ui/auth/login_page.dart';
 import 'package:recipe_sharing/ui/creators/creator_card.dart';
 import 'package:recipe_sharing/ui/recipes/recipes_screen/recipes_screen.dart';
 import 'package:recipe_sharing/ui/stadard/error_info_page.dart';
@@ -48,6 +50,18 @@ class _CreatorsScreenState extends State<CreatorsScreen> {
                       Text(
                         state.currentUserEmail,
                         style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      TextButton(
+                        onPressed: () async {
+                          await SharedPreferencesService.clearUserData();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                        },
+                        child: Text("Log out"),
                       ),
                     ],
                   ),
