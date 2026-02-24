@@ -9,12 +9,9 @@ import '../models/paged_result.dart';
 import '../models/recipes/recipe.dart';
 
 abstract class RecipesRepository {
-  // Image upload
   Future<APIResult<String>> uploadRecipeImage({
     required File imageFile,
   });
-
-  // Get recipes
 
   Future<APIResult<PagedResult<Recipe>>> getFilteredRecipes({
     String? name,
@@ -46,7 +43,6 @@ abstract class RecipesRepository {
     required String recipeID,
   });
 
-  // Recipe CRUD
   Future<APIResult<String>> postRecipe({
     required Recipe request,
   });

@@ -68,7 +68,6 @@ class _RecipeCardState extends State<RecipeCard>
 
     return LayoutBuilder(
       builder: (context, constraints) {
-        // Adjust stars size based on available width
         if (constraints.maxWidth < starSizePx * 5) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             setState(() {
@@ -77,7 +76,6 @@ class _RecipeCardState extends State<RecipeCard>
           });
         }
 
-        // Adjust meter radius based on available width
         final meterRadiusPx = _meterRadius * localDensity;
         if ((meterRadiusPx * 2) / constraints.maxWidth > 0.3) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -99,14 +97,12 @@ class _RecipeCardState extends State<RecipeCard>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Image section
                 Stack(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: SizedBox(
                         width: constraints.maxWidth,
-                        // TODO(add async images)
                         child: Image.asset(
                           'assets/no_image.png',
                           fit: BoxFit.cover,

@@ -1,5 +1,4 @@
 extension NumberFormatter on int {
-  /// Alternative implementation using NumberFormat for better localization
   String toAmountStringFormatted() {
     if (this > 100000000000) return '> 100 B';
 

@@ -31,7 +31,7 @@ class RecipeOrderingDropDownMenu extends StatelessWidget {
       items: RecipeOrdering.values.map((ordering) {
         return DropdownMenuItem<RecipeOrdering>(
           value: ordering,
-          child: Text(ordering.name), // enum name
+          child: Text(ordering.name), 
         );
       }).toList(),
     );

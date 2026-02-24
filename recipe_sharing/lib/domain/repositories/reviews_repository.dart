@@ -4,7 +4,6 @@ import '../models/paged_result.dart';
 import '../models/reviews/revipe_review.dart';
 
 abstract class ReviewsRepository {
-  // Get reviews
   Future<PagedResult<RecipeReview>> getReviewsByRecipe({
     required String token,
     required String recipeID,
@@ -29,7 +28,6 @@ abstract class ReviewsRepository {
     required String recipeID,
   });
 
-  // Review stats
   Future<int> getReviewsCountByRecipe({
     required String token,
     required String id,
@@ -40,7 +38,6 @@ abstract class ReviewsRepository {
     required String id,
   });
 
-  // Positive reviews
   Future<PagedResult<RecipeReview>> getPosReviewsByRecipe({
     required String token,
     required String id,
@@ -55,7 +52,6 @@ abstract class ReviewsRepository {
     required int pageSize,
   });
 
-  // Negative reviews
   Future<PagedResult<RecipeReview>> getNegReviewsByRecipe({
     required String token,
     required String id,
@@ -70,7 +66,6 @@ abstract class ReviewsRepository {
     required int pageSize,
   });
 
-  // Single review operations
   Future<RecipeReview> getReviewByID({
     required String token,
     required String id,
@@ -81,7 +76,6 @@ abstract class ReviewsRepository {
     required String id,
   });
 
-  // Review CRUD
   Future<void> postReview({
     required String token,
     required RecipeReview reviewRequest,

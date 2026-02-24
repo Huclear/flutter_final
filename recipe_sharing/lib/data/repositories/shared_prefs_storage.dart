@@ -6,7 +6,6 @@ class SharedPreferencesService {
   static const String _userEmail = 'user_email';
   static const String _userNickname = 'user_nickname';
 
-  // Save user session locally
   static Future<void> saveUser(
     String userId,
     String email,
@@ -19,13 +18,11 @@ class SharedPreferencesService {
     await prefs.setString(_userNickname, nickname);
   }
 
-  // Check if user was logged in
   static Future<bool> isUserLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_userLoggedIn) ?? false;
   }
 
-  // Get saved user data
   static Future<Map<String, String?>> getCurrentUser() async {
     final prefs = await SharedPreferences.getInstance();
     return {
@@ -35,7 +32,6 @@ class SharedPreferencesService {
     };
   }
 
-  // Clear on logout
   static Future<void> clearUserData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_userLoggedIn);

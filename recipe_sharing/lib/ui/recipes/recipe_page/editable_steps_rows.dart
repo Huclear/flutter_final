@@ -78,7 +78,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
         curve: Curves.easeInOut,
         child: Column(
           children: [
-            // Header row (always visible)
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -89,7 +88,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Instructions count
                   Text(
                     'Instructions (${widget.steps.length})',
                     style: theme.textTheme.titleMedium?.copyWith(
@@ -97,7 +95,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
                     ),
                   ),
 
-                  // Total duration
                   Opacity(
                     opacity: 0.5,
                     child: Text(
@@ -110,8 +107,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
                 ],
               ),
             ),
-
-            // Expanded content
             if (_isExpanded)
               AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
@@ -120,7 +115,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
                   children: [
                     const SizedBox(height: 8),
 
-                    // Step rows
                     ...List.generate(widget.steps.length, (index) {
                       return Padding(
                         padding: widget.itemPadding,
@@ -134,7 +128,6 @@ class _EditableStepsRowsState extends State<EditableStepsRows> {
                       );
                     }),
 
-                    // Add button (if editable)
                     if (widget.canEdit)
                       Padding(
                         padding: const EdgeInsets.symmetric(

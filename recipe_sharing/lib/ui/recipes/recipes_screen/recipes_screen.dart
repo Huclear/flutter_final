@@ -14,8 +14,6 @@ import 'package:recipe_sharing/ui/stadard/error_info_page.dart';
 import 'package:recipe_sharing/ui/stadard/page__selection_row.dart';
 
 import '../../filter/filters_tab.dart';
-// Import your own packages
-
 class RecipesScreen extends StatefulWidget {
   final RecipesLoadedDataType loadedDataType;
 

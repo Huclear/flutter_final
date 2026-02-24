@@ -31,7 +31,7 @@ class _DifficultyMeterPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final arcDegrees = 275;
     final startArcAngle =
-        -225.0; // 135 degrees converted to radians (135 - 360)
+        -225.0; 
     final startStepAngle = -45.0;
     final numberOfMarkers = RecipeDifficulty.values.length;
     final degreesMarkerStep = arcDegrees / numberOfMarkers;
@@ -64,7 +64,6 @@ class _DifficultyMeterPainter extends CustomPainter {
       ..strokeWidth = size.width / 5
       ..strokeCap = StrokeCap.round;
 
-    // Draw background arc
     paint.color = progressBackgroundColor;
     canvas.drawArc(
       rect,
@@ -74,7 +73,6 @@ class _DifficultyMeterPainter extends CustomPainter {
       paint,
     );
 
-    // Draw progress arc
     paint.color = progressColor;
     canvas.drawArc(
       rect,
@@ -84,13 +82,11 @@ class _DifficultyMeterPainter extends CustomPainter {
       paint,
     );
 
-    // Draw center circles
     paint.style = PaintingStyle.fill;
     canvas.drawCircle(center, size.width / 6, paint..color = progressColor);
     canvas.drawCircle(center, size.width / 9, paint..color = Colors.white);
     canvas.drawCircle(center, size.width / 12, paint..color = Colors.black);
 
-    // Draw pointer
     canvas.save();
     canvas.translate(center.dx, center.dy);
     canvas.rotate(radians(startStepAngle + degreesMarkerStep * progress));

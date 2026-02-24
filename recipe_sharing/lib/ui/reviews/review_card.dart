@@ -19,10 +19,8 @@ class ReviewCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // User info row
             Row(
               children: [
-                // User avatar with CachedNetworkImage
                 Container(
                   width: 64,
                   height: 64,
@@ -39,7 +37,6 @@ class ReviewCard extends StatelessWidget {
 
                 const SizedBox(width: 12),
 
-                // User name
                 Expanded(
                   child: Text(
                     review.userName,
@@ -56,12 +53,10 @@ class ReviewCard extends StatelessWidget {
 
             const SizedBox(height: 12),
 
-            // Rating row
             RatingRow(currentRating: review.rating.toDouble(), starSize: 24),
 
             const SizedBox(height: 12),
 
-            // Review text
             Text(
               review.text,
               style: theme.textTheme.bodyLarge?.copyWith(

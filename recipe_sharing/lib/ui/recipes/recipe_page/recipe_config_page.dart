@@ -196,7 +196,6 @@ class _RecipeConfigPageState extends State<RecipeConfigPage>
                         icon: const Icon(Icons.comment),
                         onPressed: state.recipe.data?.recipeID != null
                             ? () {
-                                // TODO() add posting review page
                               }
                             : null,
                       ),
@@ -504,7 +503,6 @@ class _RecipeConfigPageState extends State<RecipeConfigPage>
             ),
           GestureDetector(
             onTap: () {
-              // TODO() add pick image
             },
             child: Container(
               width: double.infinity,
@@ -851,7 +849,6 @@ class _RecipeConfigPageState extends State<RecipeConfigPage>
               children: [
                 TextButton(
                   onPressed: () {
-                    // TODO add reviews page navigator
                   },
                   child: Text(
                     'View all reviews',
@@ -862,7 +859,6 @@ class _RecipeConfigPageState extends State<RecipeConfigPage>
                   IconButton(
                     icon: const Icon(Icons.add_comment),
                     onPressed: () {
-                      // TODO add navigation to reviews page
                     },
                   ),
               ],

@@ -1,7 +1,6 @@
 import '../../domain/models/validation_info.dart';
 
 class PasswordChecker {
-  // Private static fields
   static int __minLength = 15;
   static int __lettersLeastCount = 1;
   static int __numbersLeastCount = 1;
@@ -9,7 +8,6 @@ class PasswordChecker {
   static bool __hasUpperCase = true;
   static bool __hasLowerCase = true;
 
-  // Special characters regex pattern
   static final RegExp _specialCharsRegex = RegExp(r'[$@_!?#%^&:;\/\\\]\[]');
 
   static final RegExp _upperCaseRegex = RegExp(r'[A-Z]');
@@ -19,7 +17,6 @@ class PasswordChecker {
   /// @param password password input
   /// @return [ValidationInfo] with [ValidationInfo.isValid] equals to true if password is valid; otherwise - false
   ValidationInfo checkPassword(String password) {
-    // Check length
     if (password.length < __minLength) {
       return ValidationInfo(
         isValid: false,
@@ -28,7 +25,6 @@ class PasswordChecker {
       );
     }
 
-    // Check numbers count
     var numbersReg = RegExp(r"[0-9]");
     final numberCount = numbersReg.allMatches(password).length;
     if (numberCount < __numbersLeastCount) {
@@ -39,7 +35,6 @@ class PasswordChecker {
       );
     }
 
-    // Check letters count
     var lttersReg = RegExp(r"[A-Za-z]");
     final letterCount = lttersReg.allMatches(password).length;
     if (letterCount < __lettersLeastCount) {
@@ -50,7 +45,6 @@ class PasswordChecker {
       );
     }
 
-    // Check special characters
     final hasSpecial = _specialCharsRegex.allMatches(password);
     if (hasSpecial.isNotEmpty && !__hasSpecials ||
         hasSpecial.isEmpty && __hasSpecials) {
@@ -60,7 +54,6 @@ class PasswordChecker {
       );
     }
 
-    // Check uppercase
     final hasUpper = _upperCaseRegex.hasMatch(password);
     if (hasUpper != __hasUpperCase) {
       return ValidationInfo(
@@ -69,7 +62,6 @@ class PasswordChecker {
       );
     }
 
-    // Check lowercase
     final hasLower = _lowerCaseRegex.hasMatch(password);
     if (hasLower != __hasLowerCase) {
       return ValidationInfo(
@@ -102,15 +94,5 @@ class PasswordChecker {
     __hasSpecials = hasSpecials;
     __hasUpperCase = hasUpperCase;
     __hasLowerCase = hasLowerCase;
-  }
-
-  // Optional: Reset to defaults
-  static void resetToDefaults() {
-    __minLength = 15;
-    __lettersLeastCount = 1;
-    __numbersLeastCount = 1;
-    __hasSpecials = true;
-    __hasUpperCase = true;
-    __hasLowerCase = true;
   }
 }

@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
-                  'Login', // Replace with string resource
+                  'Login', 
                   style: Theme.of(blocContext).textTheme.headlineMedium,
                   maxLines: 2,
                   textAlign: TextAlign.start,
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
     } else if (result is AuthResultError) {
       return ErrorInfoPage(
         errorInfo:
-            result.info ?? 'Unknown error', // Replace with string resource
+            result.info ?? 'Unknown error',
         onReloadPage: () => onReloadPage,
       );
     } else if (result is AuthResultLoading) {
@@ -162,7 +162,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: Text('Login'), // Replace with string resource
+                child: Text('Login'),
               ),
             ),
 
@@ -184,7 +184,7 @@ class LoginScreen extends StatelessWidget {
                       vertical: 8,
                     ),
                     child: Text(
-                      'Register', // Replace with string resource
+                      'Register',
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.secondary,
                         fontSize: 16,

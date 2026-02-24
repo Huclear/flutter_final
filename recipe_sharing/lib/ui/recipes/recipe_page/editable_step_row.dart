@@ -82,7 +82,6 @@ class _EditableStepRowState extends State<EditableStepRow> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Step order
                   Text(
                     'Step ${widget.stepOrder + 1}',
                     style: theme.textTheme.titleMedium?.copyWith(

@@ -22,11 +22,9 @@ class IngredientCell extends StatelessWidget {
 
     return Row(
       children: [
-        // Main ingredient row
         Expanded(
           child: Row(
             children: [
-              // Ingredient name
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
@@ -40,10 +38,8 @@ class IngredientCell extends StatelessWidget {
                 ),
               ),
 
-              // Amount and unit row
               Row(
                 children: [
-                  // Amount with parentheses
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
@@ -57,7 +53,6 @@ class IngredientCell extends StatelessWidget {
                     ),
                   ),
 
-                  // Unit (short name)
                   Text(
                     ingredient.measureType.shortName,
                     style: theme.textTheme.bodyLarge?.copyWith(

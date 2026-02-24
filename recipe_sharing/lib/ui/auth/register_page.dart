@@ -28,7 +28,7 @@ class RegisterScreen extends StatelessWidget {
               title: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
-                  'Create Account', // More descriptive title
+                  'Create Account',
                   style: Theme.of(context).textTheme.headlineMedium,
                   maxLines: 2,
                 ),
@@ -203,7 +203,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 child: Text(
                   'Create an account',
-                ), // Replace with string resource
+                ),
               ),
             ),
 
@@ -225,7 +225,7 @@ class RegisterScreen extends StatelessWidget {
                       vertical: 8,
                     ),
                     child: Text(
-                      'Already have an account?', // Replace with string resource
+                      'Already have an account?', 
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.secondary,
                         fontSize: 16,

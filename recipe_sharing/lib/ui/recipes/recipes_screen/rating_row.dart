@@ -70,13 +70,11 @@ class _StarPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final path = _createStarPath(size);
     
-    // Draw border
     final borderPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1
       ..color = color;
     
-    // Draw fill
     final fillPaint = Paint()
       ..style = PaintingStyle.fill
       ..shader = LinearGradient(

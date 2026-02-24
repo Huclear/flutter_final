@@ -1,4 +1,3 @@
-// auth_view_model.dart
 import 'package:flutter/material.dart';
 import 'package:recipe_sharing/data/helpers/password_checker.dart';
 import 'package:recipe_sharing/data/repositories/shared_prefs_storage.dart';
